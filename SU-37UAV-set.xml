@@ -1,0 +1,1568 @@
+<?xml version="1.0"?>
+<!--
+************************************************************************
+SU-37 simulation config.
+
+2006-06-04 Lee Elliott
+************************************************************************
+-->
+
+  <PropertyList>
+    <sim>
+      <flight-model>jsb</flight-model>
+      <status>experimental</status>
+      <author>Lee Elliott</author>
+      <aero>T-50</aero>
+      <fuel-fraction>1.0</fuel-fraction>
+
+      <description>Sukhoi Su-37 UAV Terminator</description>
+
+      <virtual-cockpit archive="y">true</virtual-cockpit>
+
+      <view n="0">
+        <internal archive="y">true</internal>
+        <config>
+          <x-offset-m archive="y">0.00</x-offset-m>
+          <y-offset-m archive="y">1.45</y-offset-m>
+          <z-offset-m archive="y">5.02</z-offset-m>
+          <pitch-offset-deg>0</pitch-offset-deg>
+          <default-field-of-view-deg>55</default-field-of-view-deg>
+        </config>
+      </view>
+
+      <view n="100">
+        <name>Drop View</name>
+        <type>lookat</type>
+        <config>
+          <eye-fixed type="bool">true</eye-fixed>
+          <eye-lat-deg-path>/sim/view[100]/latitude-deg</eye-lat-deg-path>
+          <eye-lon-deg-path>/sim/view[100]/longitude-deg</eye-lon-deg-path>
+          <eye-alt-ft-path>/sim/view[100]/altitude-ft</eye-alt-ft-path>
+          <eye-roll-deg-path>/sim/view[100]/roll-deg</eye-roll-deg-path>
+          <eye-pitch-deg-path>/sim/view[100]/pitch-deg</eye-pitch-deg-path>
+          <eye-heading-deg-path>/sim/view[100]/heading-deg</eye-heading-deg-path>
+          <at-model type="bool">true</at-model>
+          <at-model-idx type="int">0</at-model-idx>
+          <ground-level-nearplane-m type="double">1.0f</ground-level-nearplane-m>
+          <default-field-of-view-deg type="double">8.0</default-field-of-view-deg>
+          <x-offset-m type="double">0</x-offset-m>
+          <y-offset-m type="double">0</y-offset-m>
+          <z-offset-m type="double">0</z-offset-m>
+          <target-z-offset-m archive="y" type="double">10.0</target-z-offset-m>
+        </config>
+      </view>
+
+      <current-view>
+        <field-of-view>55.0</field-of-view>
+      </current-view>
+
+<!-- Shift the camera target point back -->
+      <view n="1">
+        <config>
+          <target-z-offset-m archive="y" type="double">10.0</target-z-offset-m>
+        </config>
+      </view>
+
+      <view n="2">
+        <config>
+          <y-offset-m archive="y" type="double">5.4</y-offset-m>
+          <z-offset-m archive="y">-19.7</z-offset-m>
+          <target-z-offset-m archive="y" type="double">10.0</target-z-offset-m>
+        </config>
+      </view>
+
+      <view n="3">
+        <config>
+          <target-z-offset-m archive="y" type="double">10.0</target-z-offset-m>
+        </config>
+      </view>
+
+      <view n="4">
+        <config>
+          <target-z-offset-m archive="y" type="double">10.0</target-z-offset-m>
+        </config>
+      </view>
+
+      <view n="5">
+        <config>
+          <target-z-offset-m archive="y" type="double">10.0</target-z-offset-m>
+        </config>
+      </view>
+
+      <view n="6">
+        <config>
+          <target-z-offset-m archive="y" type="double">10.0</target-z-offset-m>
+        </config>
+      </view>
+
+      <sound>
+        <path>Aircraft/T-50/Sounds/Sound.xml</path>
+      </sound>
+
+      <model>
+        <path>Aircraft/SU-37/Models/SU-37-model.xml</path>
+        <nozzle-animation type="float">1</nozzle-animation>
+      </model>
+
+      <panel>
+        <path>Aircraft/SU-37/Panels/SU-37-vfr-panel.xml</path>
+      </panel>
+      <panel_2>
+        <path>Aircraft/SU-37/Panels/SU-37-mini-panel.xml</path>
+      </panel_2>
+
+      <hud>
+        <visibility n="1">true</visibility>
+      </hud>
+
+      <systems>
+        <autopilot>
+          <path>Aircraft/SU-37/Systems/Autopilot.xml</path>
+        </autopilot>
+      </systems>
+
+      <chase-distance-m type="double" archive="y">-30.0</chase-distance-m>
+
+<!-- Flap settings -->
+      <flaps>
+        <setting>0.00</setting>
+        <setting>0.08</setting>
+        <setting>0.16</setting>
+        <setting>0.32</setting>
+        <setting>0.48</setting>
+        <setting>0.64</setting>
+        <setting>0.82</setting>
+        <setting>1.00</setting>
+      </flaps>
+
+<!-- TFA popup dialogue -->
+      <gui>
+        <dialogs>
+          <TFA-popup>
+            <config>
+              <dialog include="Dialogs/TFA-popup.xml"/>
+            </config>
+          </TFA-popup>
+        </dialogs>
+      </gui>
+    <multiplay>
+    <generic>
+<float n="0" type="double" alias="/surface-positions/left-elevon-pos-norm"/>
+<float n="1" type="double" alias="/surface-positions/right-elevon-pos-norm"/>
+<float n="2" type="double" alias="/engines/engine[0]/vector-norm"/>
+<float n="3" type="double" alias="/engines/engine[1]/vector-norm"/>
+<float n="4" type="double" alias="/engines/engine[0]/reheat-norm"/>
+<float n="5" type="double" alias="/engines/engine[1]/reheat-norm"/>
+<float n="6" type="double" alias="/engines/engine[0]/nozzle-pos-norm"/>
+<float n="7" type="double" alias="/engines/engine[1]/nozzle-pos-norm"/>
+<float n="8" type="double" alias="/fdm/jsbsim/fcs/leftcannardstopper"/>
+<float n="9" type="double" alias="/fdm/jsbsim/fcs/rightcannardstopper"/>
+</generic>		
+<visibility-range-nm type="int">2000</visibility-range-nm> <!--Cant just do this, Nasal has to override it-->
+	</multiplay>
+<!-- AoA Indexer target 7.0 deg -->
+      <aoa-indexer>
+        <too-slow-deg>8.5</too-slow-deg>  <!-- target +1.5 deg -->
+        <slow-deg>7.5</slow-deg>          <!-- target +0.5 deg -->         
+        <fast-deg>6.5</fast-deg>          <!-- target -0.5 deg -->         
+        <too-fast-deg>-5.5</too-fast-deg>  <!-- target -1.5 deg -->         
+      </aoa-indexer>
+
+<!--sub models -->
+      <submodels>
+        <serviceable type="bool">1</serviceable>
+        <path>Aircraft/SU-37/SU-37-submodels.xml</path>
+      </submodels>
+
+<!-- Help -->
+      <help>
+        <title>SU-37</title>
+        <key>
+          <name>Ctrl-z</name>
+          <desc>toggle auto-speedbrake</desc>
+        </key>
+        <key>
+          <name>Ctrl-\</name>
+          <desc>toggle stick mode</desc>
+        </key>
+        <key>
+          <name>d/f</name>
+          <desc>retract/extend slats</desc>
+        </key>
+        <key>
+          <name>j/k</name>
+          <desc>decrease/increase speedbrake</desc>
+        </key>
+        <key>
+          <name>K</name>
+          <desc>toggle trajectory markers</desc>
+        </key>
+        <key>
+          <name>U</name>
+          <desc>update drop view position</desc>
+        </key>
+        <line>Note some of these keys dont work yet</line>
+        <line>Autopilot</line>
+        <line>  Altitude</line>
+        <line>    AH - Altitude hold</line>
+        <line>    TF - Terrain follow/AGL hold</line>
+        <line>    PH - Pitch hold</line>
+        <line>    AO - AoA hold</line>
+        <line>    VC - VFPS hold</line>
+        <line>    GS - Glideslope hold</line>
+        <line>    MC - Mach Climb</line>
+        <line></line>
+        <line>  Heading</line>
+        <line>    WL - Wing leveler</line>
+        <line>    TH - True Heading hold</line>
+        <line>    DG - DG Heading hold</line>
+        <line>    NV - Nav1 hold</line>
+        <line></line>
+        <line>FCS</line>
+        <line>  SMode</line>
+        <line>    DR - Stick controls elevon and flaperon directly</line>
+        <line>    PT - Stick controls pitch and roll settings</line>
+        <line>    VC - Stick controls climb and roll settings</line>
+        <line></line>
+        <line>  AF - Auto flaps</line>
+        <line>  AS - Auto slats</line>
+        <line>  SB - Auto speedbrake</line>
+        <line>  CI - Cubed Input (Direct mode only)</line>
+        <line>  AR - Auto reheat</line>
+        <line>  ASR - Auto spin recovery</line>
+      </help>
+
+
+		<menubar>
+			<default>
+				<menu n="100">
+					<label>Su-37 Terminator</label>
+					<enabled type="bool">true</enabled>
+							<item>
+			<label>Pylons loads</label>
+			<binding>
+				<command>nasal</command>
+				 <script>CanvasPylonsDlg.showPylonsDlg()</script>
+			</binding>
+		</item>
+					<item>
+						<label>Select Livery</label>
+						<binding>
+							<command>nasal</command>
+							<script>aircraft.livery.dialog.toggle()</script>
+						</binding>
+					</item>
+<item>
+			<label>Toggle Damage</label>
+			<binding>
+				<command>nasal</command>
+				<script>
+						if(getprop("/payload/armament/msg")){screen.log.write("Damage OFF",1,0,0);setprop("/payload/armament/msg",0);}else{screen.log.write("Damage ON",1,0,0);setprop("/payload/armament/msg",1);}
+				</script>
+			</binding>
+		</item>
+<item>
+			<label>Reset Drone Weapons (8-r77, 2-r73)</label>
+			<binding>
+				<command>nasal</command>
+				<script>
+						setprop("controls/AI/weapons/weapon1/ammount",8);
+            setprop("controls/AI/weapons/weapon2/ammount",2);
+				</script>
+			</binding>
+		</item>
+
+
+  <item>
+			<label>Enable Securecomm and COMMNET</label>
+			<binding>
+				<command>nasal</command>
+				<script>
+						setprop("controls/drone/securecomm",1);
+            setprop("controls/drone/usecommnet",1);
+				</script>
+			</binding>
+		</item>
+
+
+					<item>
+        <label>Event Log</label>
+        <binding>
+            <command>dialog-show</command>
+            <dialog-name>flightlog</dialog-name>
+        </binding>
+      </item>
+
+
+
+
+
+       <item>
+                <name>sep</name>
+                <label>SITU.nas: Enable a2a</label>
+                <binding>
+                    <command>nasal</command>
+      <script>situ.enablea2a();setprop("controls/AI/patrol",1);aitrack.start();</script>
+                </binding>
+            </item>
+       <item>
+                <name>sep</name>
+                <label>SITU.nas: Disable a2a</label>
+                <binding>
+                    <command>nasal</command>
+      <script>situ.disablea2a();setprop("controls/AI/patrol",0);aitrack.stop();</script>
+                </binding>
+            </item>
+                   <item>
+                <name>sep</name>
+                <label>SITU.nas: Enable a2g</label>
+                <binding>
+                    <command>nasal</command>
+      <script>situ.enablea2g();</script>
+                </binding>
+            </item>
+       <item>
+                <name>sep</name>
+                <label>SITU.nas: Disable a2g</label>
+                <binding>
+                    <command>nasal</command>
+      <script>situ.disablea2g();</script>
+                </binding>
+            </item>
+       <item>
+
+                <name>sep</name>
+                <label>AI.nas: Clear SITU target queue</label>
+                <binding>
+                    <command>nasal</command>
+      <script>aitrack.clearqueue();</script>
+                </binding>
+            </item>
+
+       <item>
+
+                <name>sep</name>
+                <label>SITU.nas: Clear SITU rwr contacts</label>
+                <binding>
+                    <command>nasal</command>
+      <script>situ.reset();</script>
+                </binding>
+            </item>
+
+
+				</menu>
+			</default>
+		</menubar>
+	      <weight n="0">
+            <name>pylon1</name>
+            <weight-lb type="double"> 0 </weight-lb>
+            <selected>none</selected>
+            <offsets>
+                <x-m type="double"> 11.55 </x-m>
+                <y-m type="double"> 0.0 </y-m>
+                <z-m type="double"> -0.404 </z-m>
+            </offsets>
+            <opt>
+                <name>none</name>
+                <lbs type="double"> 0.00 </lbs>
+            </opt>
+            <opt>
+                <name>R-27R</name>
+                <lbs type="double"> 230.21 </lbs>
+            </opt>
+            <opt>
+                <name>R-27ER</name>
+                <lbs type="double"> 230.00 </lbs>
+            </opt>
+            <opt>
+                <name>R-27T</name>
+                <lbs type="double"> 230.91 </lbs>
+            </opt>
+            <opt>
+                <name>R-27ET</name>
+                <lbs type="double"> 230.00 </lbs>
+            </opt>
+            <opt>
+                <name>R-77</name>
+                <lbs type="double"> 230.00 </lbs>
+            </opt>
+        </weight>
+
+        <weight n="1">
+            <name>pylon2</name>
+            <weight-lb type="double"> 0 </weight-lb>
+            <selected>none</selected>
+            <offsets>
+			<x-m>10.6189</x-m>
+			<y-m>0.2794</y-m>
+			<z-m>-0.4602</z-m>
+                <x-m type="double">16.3143</x-m>
+                <y-m type="double">0.2794</y-m>
+                <z-m type="double">-0.1766</z-m>
+            </offsets>
+            <opt>
+                <name>none</name>
+                <lbs type="double"> 0.00 </lbs>
+            </opt>
+            <opt>
+                <name>R-27R</name>
+                <lbs type="double"> 230.21 </lbs>
+            </opt>
+            <opt>
+                <name>R-27ER</name>
+                <lbs type="double"> 230.00 </lbs>
+            </opt>
+            <opt>
+                <name>R-27T</name>
+                <lbs type="double"> 230.91 </lbs>
+            </opt>
+            <opt>
+                <name>R-27ET</name>
+                <lbs type="double"> 230.00 </lbs>
+            </opt>
+            <opt>
+                <name>R-77</name>
+                <lbs type="double"> 230.00 </lbs>
+            </opt>
+        </weight>
+
+        <weight n="2">
+            <name>pylon3</name>
+            <tank>2</tank>
+            <weight-lb type="double"> 0 </weight-lb>
+            <offsets>
+                <x-m type="double"> 14.000 </x-m>
+                <y-m type="double"> -4.836 </y-m>
+                <z-m type="double"> -0.24  </z-m>
+            </offsets>
+            <selected>none</selected>
+            <opt>
+                <name>none</name>
+                <lbs type="double"> 0.00 </lbs>
+            </opt>
+            <opt>
+                <name>R-27R</name>
+                <lbs type="double"> 230.21 </lbs>
+            </opt>
+            <opt>
+                <name>R-27ER</name>
+                <lbs type="double"> 230.00 </lbs>
+            </opt>
+            <opt>
+                <name>R-27T</name>
+                <lbs type="double"> 230.91 </lbs>
+            </opt>
+            <opt>
+                <name>R-27ET</name>
+                <lbs type="double"> 230.00 </lbs>
+            </opt>
+            <opt>
+                <name>R-77</name>
+                <lbs type="double"> 230.00 </lbs>
+            </opt>
+        </weight>
+
+        <weight n="3">
+            <name>pylon4</name>
+            <weight-lb type="double"> 0 </weight-lb>
+            <selected>none</selected>
+            <offsets>
+                <x-m type="double">10.6189</x-m>
+                <y-m type="double">-0.2794</y-m>
+                <z-m type="double">-0.4602</z-m>
+            </offsets>
+            <opt>
+                <name>none</name>
+                <lbs type="double"> 0.00 </lbs>
+            </opt>
+            <opt>
+                <name>R-27R</name>
+                <lbs type="double"> 230.21 </lbs>
+            </opt>
+            <opt>
+                <name>R-27ER</name>
+                <lbs type="double"> 230.00 </lbs>
+            </opt>
+            <opt>
+                <name>R-27T</name>
+                <lbs type="double"> 230.91 </lbs>
+            </opt>
+            <opt>
+                <name>R-27ET</name>
+                <lbs type="double"> 230.00 </lbs>
+            </opt>
+            <opt>
+                <name>R-77</name>
+                <lbs type="double"> 230.00 </lbs>
+            </opt>
+        </weight>
+
+        <weight n="4">
+            <name>pylon5</name>
+            <weight-lb type="double"> 0 </weight-lb>
+            <selected>none</selected>
+            <offsets>
+                <x-m type="double"> 14.800 </x-m>
+                <y-m type="double"> -6.490 </y-m>
+                <z-m type="double"> -0.02  </z-m>
+            </offsets>
+            <opt>
+                <name>none</name>
+                <lbs type="double"> 0.00 </lbs>
+            </opt>
+            <opt>
+                <name>R-27R</name>
+                <lbs type="double"> 230.21 </lbs>
+            </opt>
+            <opt>
+                <name>R-27ER</name>
+                <lbs type="double"> 230.00 </lbs>
+            </opt>
+            <opt>
+                <name>R-27T</name>
+                <lbs type="double"> 230.91 </lbs>
+            </opt>
+            <opt>
+                <name>R-27ET</name>
+                <lbs type="double"> 230.00 </lbs>
+            </opt>
+            <opt>
+                <name>R-77</name>
+                <lbs type="double"> 230.00 </lbs>
+            </opt>
+        </weight>
+
+        <weight n="5">
+            <name>pylon6</name>
+            <weight-lb type="double"> 0 </weight-lb>
+            <selected>none</selected>
+            <offsets>
+                <x-m type="double"> 10.6189 </x-m>
+                <y-m type="double">0.2794</y-m>
+                <z-m type="double"> -0.4602 </z-m>
+            </offsets>
+            <opt>
+                <name>none</name>
+                <lbs type="double"> 0.00 </lbs>
+            </opt>
+            <opt>
+                <name>R-27R</name>
+                <lbs type="double"> 230.21 </lbs>
+            </opt>
+            <opt>
+                <name>R-27ER</name>
+                <lbs type="double"> 230.00 </lbs>
+            </opt>
+            <opt>
+                <name>R-27T</name>
+                <lbs type="double"> 230.91 </lbs>
+            </opt>
+            <opt>
+                <name>R-27ET</name>
+                <lbs type="double"> 230.00 </lbs>
+            </opt>
+            <opt>
+                <name>R-77</name>
+                <lbs type="double"> 230.00 </lbs>
+            </opt>
+        </weight>
+
+        <weight n="6">
+            <name>pylon7</name>
+            <weight-lb type="double"> 0 </weight-lb>
+            <selected>none</selected>
+            <offsets>
+                <x-m type="double"> 11.4105</x-m>
+                <y-m type="double">  2.7835</y-m>
+                <z-m type="double"> -0.3099</z-m>
+            </offsets>
+            <opt>
+                <name>none</name>
+                <lbs type="double"> 0.00 </lbs>
+            </opt>
+            <opt>
+                <name>R-27R</name>
+                <lbs type="double"> 230.21 </lbs>
+            </opt>
+            <opt>
+                <name>R-27ER</name>
+                <lbs type="double"> 230.00 </lbs>
+            </opt>
+            <opt>
+                <name>R-27T</name>
+                <lbs type="double"> 230.91 </lbs>
+            </opt>
+            <opt>
+                <name>R-27ET</name>
+                <lbs type="double"> 230.00 </lbs>
+            </opt>
+            <opt>
+                <name>R-77</name>
+                <lbs type="double"> 230.00 </lbs>
+            </opt>
+            <opt>
+                <name>R-73</name>
+                <lbs type="double"> 230.00 </lbs>
+            </opt>
+        </weight>
+
+        <weight n="7">
+            <name>pylon8</name>
+            <weight-lb type="double"> 0 </weight-lb>
+            <selected>none</selected>
+            <offsets>
+                <x-m type="double"> 11.4105 </x-m>
+                <y-m type="double"> -2.7835 </y-m>
+                <z-m type="double"> -0.3099 </z-m>
+            </offsets>
+            <opt>
+                <name>none</name>
+                <lbs type="double"> 0.00 </lbs>
+            </opt>
+            <opt>
+                <name>R-27R</name>
+                <lbs type="double"> 230.21 </lbs>
+            </opt>
+            <opt>
+                <name>R-27ER</name>
+                <lbs type="double"> 230.00 </lbs>
+            </opt>
+            <opt>
+                <name>R-27T</name>
+                <lbs type="double"> 230.91 </lbs>
+            </opt>
+            <opt>
+                <name>R-27ET</name>
+                <lbs type="double"> 230.00 </lbs>
+            </opt>
+            <opt>
+                <name>R-77</name>
+                <lbs type="double"> 230.00 </lbs>
+            </opt>
+            <opt>
+                <name>R-73</name>
+                <lbs type="double"> 230.00 </lbs>
+            </opt>
+        </weight>
+
+        <weight n="8">
+            <name>pylon9</name>
+            <weight-lb type="double"> 0 </weight-lb>
+            <selected>none</selected>
+            <offsets>
+                <x-m type="double"> 13.550 </x-m>
+                <y-m type="double"> -1.235 </y-m>
+                <z-m type="double"> -1.324 </z-m>
+            </offsets>
+            <opt>
+                <name>none</name>
+                <lbs type="double"> 0.00 </lbs>
+            </opt>
+            <opt>
+                <name>R-27R</name>
+                <lbs type="double"> 230.21 </lbs>
+            </opt>
+            <opt>
+                <name>R-27ER</name>
+                <lbs type="double"> 230.00 </lbs>
+            </opt>
+            <opt>
+                <name>R-27T</name>
+                <lbs type="double"> 230.91 </lbs>
+            </opt>
+            <opt>
+                <name>R-27ET</name>
+                <lbs type="double"> 230.00 </lbs>
+            </opt>
+            <opt>
+                <name>R-77</name>
+                <lbs type="double"> 230.00 </lbs>
+            </opt>
+        </weight>
+
+        <weight n="9">
+            <name>pylon10</name>
+            <weight-lb type="double"> 0 </weight-lb>
+            <selected>none</selected>
+            <offsets>
+                <x-m type="double"> 16.3143</x-m>
+                <y-m type="double">-0.2794</y-m>
+                <z-m type="double"> -0.1766</z-m>
+            </offsets>
+            <opt>
+                <name>none</name>
+                <lbs type="double"> 0.00 </lbs>
+            </opt>
+            <opt>
+                <name>R-27R</name>
+                <lbs type="double"> 230.21 </lbs>
+            </opt>
+            <opt>
+                <name>R-27ER</name>
+                <lbs type="double"> 230.00 </lbs>
+            </opt>
+            <opt>
+                <name>R-27T</name>
+                <lbs type="double"> 230.91 </lbs>
+            </opt>
+            <opt>
+                <name>R-27ET</name>
+                <lbs type="double"> 230.00 </lbs>
+            </opt>
+            <opt>
+                <name>R-77</name>
+                <lbs type="double"> 230.00 </lbs>
+            </opt>
+        </weight>
+	  
+    </sim>
+		
+    	<payload>
+<d-config>
+        <full_damage_dist_m type="double">3</full_damage_dist_m>
+        <use_hitpoints_instead_of_failure_modes_bool type="bool">false</use_hitpoints_instead_of_failure_modes_bool>
+        <hp_max type="double">80</hp_max>
+        <hitable_by_air_munitions type="bool">true</hitable_by_air_munitions>
+        <hitable_by_cannon type="bool">true</hitable_by_cannon>
+        <is_fleet type="bool">false</is_fleet>
+        <rwr_to_screen type="bool">true</rwr_to_screen>
+        <rwr_audio_extended type="bool">false</rwr_audio_extended>
+        <tacview_supported type="bool">false</tacview_supported>
+        <m28_auto type="bool">false</m28_auto>
+        <mlw_max type="double">0</mlw_max>
+        <auto_flare_caller type="bool">false</auto_flare_caller>
+</d-config>
+	<armament>
+	<enable-craters type="bool">true</enable-craters>
+	<MLW-bearing type="double">0</MLW-bearing>
+	<MLW-count type="int">0</MLW-count>
+	<MLW-launcher type="string"></MLW-launcher>
+	<MAW-bearing type="double">0</MAW-bearing>
+	<MAW-active type="bool">false</MAW-active>
+        <MAW-semiactive type="bool">false</MAW-semiactive>
+        <msg type="bool">true</msg>
+	<spike type="bool">false</spike>
+        <models type="string">Aircraft/SU-37/Models/emesary/</models>
+
+
+	</armament>
+		</payload>
+
+
+
+    <ai>
+      <submodels>
+        <trajectory-markers type="bool">0</trajectory-markers>
+      </submodels>
+    </ai>
+
+<!-- Keyboard mapping -->
+    <input>
+      <keyboard>
+<!-- AM -->
+        <key n="11">
+          <name>CTRL-k</name>
+          <desc>AM</desc>
+          <binding>
+            <command>nasal</command>
+            <script>SU37AM.m01()</script>
+          </binding>
+        </key>
+
+<!-- Toggle auto-flaps, slats and reheat -->
+        <key n="25">
+          <name>CTRL-y</name>
+          <desc>Toggle auto-flaps, slats and reheat</desc>
+          <binding n="0">
+            <command>nasal</command>
+            <script>SU37KBMAPPING.toggle_auto_flaps()</script>
+          </binding>
+          <binding n="1">
+            <command>nasal</command>
+            <script>SU37KBMAPPING.toggle_auto_slats()</script>
+          </binding>
+          <binding n="2">
+            <command>nasal</command>
+            <script>SU37KBMAPPING.toggle_auto_reheat()</script>
+          </binding>
+        </key>
+
+<!-- Toggle auto-speedbrake -->
+        <key n="26">
+          <name>CTRL-z</name>
+          <desc>Toggle auto-speedbrake</desc>
+          <binding>
+            <command>nasal</command>
+            <script>SU37KBMAPPING.toggle_auto_speedbrake()</script>
+          </binding>
+        </key>
+
+<!-- Stick mode -->
+        <key n="28">
+          <name>CTRL-\</name>
+          <desc>Toggle stick mode</desc>
+          <binding>
+            <command>nasal</command>
+            <script>SU37KBMAPPING.toggle_fcs_stick_mode()</script>
+          </binding>
+        </key>
+
+<!-- Slats -->
+        <key n="100">
+          <name>d</name>
+          <desc>Retract Slats.</desc>
+          <binding>
+            <command>property-adjust</command>
+            <property>/controls/flight/slats</property>
+            <step type="double">-0.25</step>
+          </binding>
+        </key>
+        <key n="102">
+          <name>f</name>
+          <desc>Extend Slats.</desc>
+          <binding>
+            <command>property-adjust</command>
+            <property>/controls/flight/slats</property>
+            <step type="double">0.25</step>
+          </binding>
+        </key>
+
+<!-- Trajectory Markers -->
+        <key n="75">
+          <name>K</name>
+          <desc>Toggle trajectory markers</desc>
+          <binding n="0">
+            <command>nasal</command>
+            <script>SU37TRAJMARKER.toggle_traj_mkr()</script>
+          </binding>
+        </key>
+
+<!-- Update Drop View position -->
+        <key n="85">
+          <name>U</name>
+          <desc>Update Drop View position</desc>
+          <binding n="0">
+            <command>nasal</command>
+            <script>SU37DROPVIEW.update_drop_view_pos()</script>
+          </binding>
+        </key>
+
+
+
+<key n="108">
+	 <name>l</name>
+     <desc>Trigger flare release</desc>
+    <!--This puts out ALOT of flares. I love it!-->
+      <binding>
+     <command>nasal</command>
+ <script>setprop("/ai/submodels/submodel/flare-release",1);t50.flares();damage.flare_released();settimer(func{setprop("/ai/submodels/submodel/flare-release",0);},0.1)</script>
+      </binding>
+  <binding>
+   <command>property-toggle</command>
+   <property>controls/flare</property>
+  </binding>
+
+    </key>
+	 <key n="114">
+  <name>r</name>
+  <desc>Switch Radar Range</desc>
+  <binding>
+ <command>nasal</command>
+ <script>radar.switch_distance();screen.log.write("Radar Range: " ~ t50.myRadar.rangeTab[radar.rangeIndex] ~ "nm.",1,1,0);</script>
+</binding>
+ </key> 
+<key n="121">
+  <name>y</name>
+  <desc>select target</desc>
+  <binding>
+ <command>nasal</command>
+ <script>radar.next_Target_Index();</script>
+</binding>
+ </key> 
+
+ <key n="101">
+  <name>e</name>
+  <desc>Fire selected WCS weapon</desc>
+  <binding>
+    <command>nasal</command>
+    <script>guns.fire_MG(1);</script>
+  </binding>
+  <mod-up>
+    <binding>
+      <command>nasal</command>
+      <script>guns.stopFiring();</script>
+    </binding>
+  </mod-up>
+ </key>
+ 
+
+ <key n="109">
+  <name>m</name>
+  <desc>Cycle selected WCS AA weapon</desc>
+  <binding>
+ <command>property-cycle</command>
+ <property>controls/armament/selected-weapon</property>
+ <value>R-73</value>
+ <value>R-77</value>
+
+</binding>
+  <binding>
+ <command>property-cycle</command>
+ <property>controls/armament/selected-weapon-digit</property>
+ <value>1</value>
+ <value>2</value>
+</binding>
+  <binding><command>nasal</command><script>screen.log.write("Selected " ~ getprop("controls/armament/selected-weapon"),0.5,0.5,1);</script></binding>
+ </key> 
+
+
+  <key n="79">
+   <name>O</name>
+   <desc>Hook down</desc>
+   <binding>
+     <command>property-assign</command>
+     <property>fdm/jsbsim/systems/hook/tailhook-cmd-norm</property>
+     <value type="double">1.0</value>
+   </binding>
+ </key>
+
+ <key n="111">
+   <name>o</name>
+   <desc>Hook Up</desc>
+   <binding>
+     <command>property-assign</command>
+     <property>fdm/jsbsim/systems/hook/tailhook-cmd-norm</property>
+     <value type="double">0.0</value>
+   </binding>
+ </key>
+
+      </keyboard>
+    </input>
+
+    <autopilot>
+<!-- FCS -->
+      <FCS>
+        <controls>
+          <canard-incidence-deg type="double">0.0</canard-incidence-deg>
+          <elevon-pitch-norm type="double">0</elevon-pitch-norm>
+          <elevon-roll-norm type="double">0</elevon-roll-norm>
+          <flaperon-flaps-norm type="double">0</flaperon-flaps-norm>
+          <flaperon-roll-norm type="double">0</flaperon-roll-norm>
+          <rudder-norm type="double">0</rudder-norm>
+          <slats-norm type="double">0</slats-norm>
+          <speedbrake-norm type="double">0</speedbrake-norm>
+          <engines>
+            <fod-screens-pos-norm type="double">0</fod-screens-pos-norm>
+            <engine n="0">
+              <aei-norm type="double">0</aei-norm>
+              <reheat-norm type="double">0</reheat-norm>
+              <throttle-norm type="double">0</throttle-norm>
+              <vector-norm type="double">0</vector-norm>
+            </engine>
+            <engine n="1">
+              <aei-norm type="double">0</aei-norm>
+              <reheat-norm type="double">0</reheat-norm>
+              <throttle-norm type="double">0</throttle-norm>
+              <vector-norm type="double">0</vector-norm>
+            </engine>
+          </engines>
+        </controls>
+        <internal>
+        </internal>
+        <locks>
+          <auto-flaps type="string">off</auto-flaps>
+          <auto-reheat type="string">off</auto-reheat>
+          <auto-slats type="string">off</auto-slats>
+          <auto-speedbrake type="string">off</auto-speedbrake>
+          <auto-spin-recovery type="string">off</auto-spin-recovery>
+          <cubed-input type="string">off</cubed-input>
+          <pitch type="string">off</pitch>
+          <roll type="string">off</roll>
+          <thrust-vectoring type="string">engaged</thrust-vectoring>
+          <vfps type="string">off</vfps>
+        </locks>
+        <modes>
+          <auto-speedbrake type="string">off</auto-speedbrake>
+          <stick type="string">direct</stick>
+        </modes>
+        <settings>
+          <aei-open-aoa-deg type="float">4.0</aei-open-aoa-deg>
+          <aei-open-aoa-factor type="float">0.25</aei-open-aoa-factor>
+          <aei-open-min-agl-ft type="float">100.0</aei-open-min-agl-ft>
+          <auto-reheat-threshold type="float">0.8</auto-reheat-threshold>
+          <fod-screens-agl-ft type="float">100.0</fod-screens-agl-ft>
+          <flaps-extend-mach type="float">0.4</flaps-extend-mach>
+          <flaps-extend-factor type="float">7.0</flaps-extend-factor>
+          <slats-extend-mach type="float">0.5</slats-extend-mach>
+          <slats-extend-factor type="float">5</slats-extend-factor>
+          <low-alt-max-pitch-deg type="float">20</low-alt-max-pitch-deg>
+          <m03-delay type="float">2.0</m03-delay>
+          <m04-delay type="float">4.4</m04-delay>
+          <m05-delay type="float">8.0</m05-delay>
+          <m06-delay type="float">10.0</m06-delay>
+          <max-climb-rate-fps type="float">200</max-climb-rate-fps>
+          <min-climb-rate-fps type="float">-180</min-climb-rate-fps>
+          <max-pitch-deg type="float">70</max-pitch-deg>
+          <min-pitch-deg type="float">-60</min-pitch-deg>
+          <pitch-climb-agl-ft type="float">20</pitch-climb-agl-ft>
+          <roll-factor type="float">50</roll-factor>
+          <rotate-airspeed-kt type="float">100</rotate-airspeed-kt>
+          <speedbrake-extend-kt type="double">0</speedbrake-extend-kt>
+          <speedbrake-extend-mach type="double">0</speedbrake-extend-mach>
+          <take-off-pitch-deg type="float">11</take-off-pitch-deg>
+        </settings>
+        <store>
+          <elevator-trim type="float">0</elevator-trim>
+        </store>
+      </FCS>
+
+<!-- Autopilot -->
+      <locks>
+        <auto-take-off type="string">enabled</auto-take-off>
+        <auto-landing type="string">disabled</auto-landing>
+        <ground-steering type="string">disabled</ground-steering>
+      </locks>
+      <settings>
+        <approach-aoa-deg type="float">7.0</approach-aoa-deg>
+        <climb-out-agl-ft type="float">400</climb-out-agl-ft>
+        <gear-up-agl-ft type="float">25</gear-up-agl-ft>
+        <gear-down-airspeed-kt type="float">200</gear-down-airspeed-kt>
+        <steering-heading-deg type="float">0</steering-heading-deg>
+        <target-agl-ft type="float">200</target-agl-ft>
+        <target-altitude-ft type="float">3000</target-altitude-ft>
+        <target-aoa-deg type="float">11</target-aoa-deg>
+        <target-climb-rate-fps type="double">0</target-climb-rate-fps>
+        <target-pitch-deg type="double">0</target-pitch-deg>
+        <target-speed-kt type="float">400.0</target-speed-kt>
+        <target-mach type="float">0.7</target-mach>
+      </settings>
+    </autopilot>
+
+<!-- Start with the Parking Brake on -->
+    <controls>
+
+<drone>
+<takeoffpitch type="float">15</takeoffpitch>
+</drone>
+
+
+<AI>
+<mostmanuverablespeed type="float">500</mostmanuverablespeed>
+<TGTCALLSIGN type="string">None</TGTCALLSIGN>
+<attack type="int">0</attack>
+<deploy-range type="int">60</deploy-range> <!--in NM-->
+<usehdgclose type="int">0</usehdgclose>
+<rdrcallsign type="string">None</rdrcallsign>
+<flybacknm type="float">1</flybacknm> <!--This will be added to the 0.6 + flybackadded-->
+<flybacknmadded type="float">12</flybacknmadded>
+<!--Air to air-->
+<weapons>
+<usecustom type="int">1</usecustom> <!--Enable custom weapons-->
+<numweapons type="int">2</numweapons> <!--Number of avaiable weapons (number of weapon defnitions. there are 2 weapon1 and weapon2 below. so we pick 2)-->
+  <weapon1>
+    
+    <name type="string">R-77</name>
+	  <callout type="string">Fox 3</callout>
+    <min-range-nm type="float">0</min-range-nm>
+	  <max-range-nm type="float">40</max-range-nm>
+	  <delay-after-deploy type="float">25</delay-after-deploy> <!--Seconds-->
+    <ammount type="int">8</ammount>
+    <type type="string">AA</type>
+  </weapon1>
+  <weapon2>
+    <name type="string">R-73</name>
+    <callout type="string">Fox 2</callout>
+	  <min-range-nm type="float">0</min-range-nm>
+	  <max-range-nm type="float">6</max-range-nm>
+	  <delay-after-deploy type="float">20</delay-after-deploy> <!--Seconds-->
+    <ammount type="int">2</ammount>
+    <type type="string">AA</type>
+  </weapon2>
+</weapons>
+<!--Air to ground-->
+<weaponsag>
+<usecustom type="int">1</usecustom> <!--Enable custom weapons-->
+<numweapons type="int">2</numweapons> <!--Number of avaiable weapons (number of weapon defnitions. there are 2 weapon1 and weapon2 below. so we pick 2)-->
+  <weapon1>
+    <name type="string">AGM-65</name>
+	  <callout type="string">Rifle</callout>
+    <min-range-nm type="float">0</min-range-nm>
+	  <max-range-nm type="float">30</max-range-nm>
+	  <delay-after-deploy type="float">1</delay-after-deploy> <!--Seconds-->
+    <ammount type="int">4</ammount>
+  </weapon1>
+</weaponsag>
+    <followenabled type="int">0</followenabled>
+</AI>
+
+
+    			  <armament>
+
+<status type="int">0</status>
+
+
+
+
+      <missile-trigger type="float">0</missile-trigger>
+
+<rdt type="int">0</rdt> <!--Right Drop Tank Show/Hide-->
+<ldt type="int">0</ldt> <!--Left Drop Tank Show/Hide-->
+<extpylons type="int">0</extpylons> <!--External Pylons for droptanks Show/Hide-->
+    <!--
+      note :
+        Missile property. the value here doesn't really count, beacause it's reloaded
+        by a Nasal file Loading_missiles.nas for each missile. Anyway this is nessecary for variable declaration
+    -->
+    <selected-weapon-digit type="int">0</selected-weapon-digit>
+    <selected-weapon type="string">none</selected-weapon>
+    <missile>
+<eject>
+      <current-pylon type="int"> 0 </current-pylon>
+</eject>
+      <flareres type="double"> 0.80 </flareres>
+      <name>None_press_m</name>
+      <type-id type="int">57</type-id>
+      <address>Aircraft/SU-27SK/Models/Stores/Missiles/R-27R/R-27R.xml</address>
+      <addressNoSmoke>Aircraft/SU-27SK/Models/Stores/Missiles/R-27R/R-27R.xml</addressNoSmoke>
+      <addressExplosion>Aircraft/SU-27SK/Models/Effects/MissileExplosion/explosion.xml</addressExplosion>
+      <count type="int">0</count>
+      <nearest-target type="int"> -1 </nearest-target>
+      <sound-on-off type="bool">false</sound-on-off>
+      <sound-volume type="double"> 0.12 </sound-volume>
+      <target-range-nm type="double"> 0 </target-range-nm>
+      <max-detection-rng-nm type="int"> 45 </max-detection-rng-nm>
+      <!-- ' not real impact yet-->
+      <fov-deg type="int"> 25 </fov-deg>
+      <!-- ' seeker optical FOV -->
+      <detection-fov-deg type="int"> 60 </detection-fov-deg>
+      <!-- ' search pattern diameter (rosette scan) -->
+      <track-max-deg type="int"> 110 </track-max-deg>
+      <!-- ' seeker max total angular rotation -->
+      <max-g type="int"> 100 </max-g>
+      <!-- ' in turn -->
+      <thrust-lbs type="double"> 300 </thrust-lbs>
+      <!-- ' guess -->
+      <thrust-duration-sec type="int"> 30 </thrust-duration-sec>
+      <!-- ' Mk.36 Mod.7,8 -->
+      <weight-launch-lbs> 216 </weight-launch-lbs>
+      <weight-warhead-lbs> 30 </weight-warhead-lbs>
+      <drag-coeff type="double"> 0.05 </drag-coeff>
+      <!-- ' guess - original 0.05-->
+      <drag-area type="double"> 0.043 </drag-area>
+      <!-- ' sq ft -->
+      <maxExplosionRange type="int"> 200 </maxExplosionRange>
+      <!--
+        note :
+          due to the code, more the speed is important, more we need to have this
+          figure high
+      -->
+      <maxspeed type="double"> 4 </maxspeed>
+      <!-- ' in Mach -->
+      <life> 60 </life>
+      <sdspeed> 60 </sdspeed>
+      <!--
+        note :
+          "Fox1" for guided by the aircraft radar (semi active) AIM7,
+          "Fox2" for infrared AIM9,
+          "Fox3" for intern missile Radar AIM120, AIM54, A/G air to ground
+      -->
+      <fox>Fox 2</fox>
+
+      <chute>0</chute>
+      <!--
+        note :
+          if the missile fall before thrust start or if there is some kind of "rail"
+      -->
+      <rail type="bool">true</rail>
+      <!--
+        note :
+          for cruise missile, in feet.0 is off.below 10000 feet is terrain following
+      -->
+      <cruise_alt type="int"> 0 </cruise_alt>
+      <current-pylon type="int"> 0 </current-pylon>
+    </missile>
+    
+    <selected-weapon>R-27R</selected-weapon>
+    <trigger type="bool">false</trigger>
+    <master-arm type="bool">true</master-arm>
+    <!-- ' 0=OFF, 1=GUN, 2=A/A, 3=A/G -->
+    <stick-selector type="int">2</stick-selector>
+    <position-norm type="int">1</position-norm>
+    
+    <station n="0">
+      <release type="bool">false</release>
+    </station>
+    
+    <station n="1">
+      <release type="bool">false</release>
+    </station>
+    
+    <station n="2">
+      <release type="bool">false</release>
+    </station>
+    
+    <station n="3">
+      <release type="bool">false</release>
+    </station>
+    
+    <station n="4">
+      <release type="bool">false</release>
+    </station>
+    
+    <station n="5">
+      <release type="bool">false</release>
+    </station>
+    
+    <station n="6">
+      <release type="bool">false</release>
+    </station>
+    
+    <station n="7">
+      <release type="bool">false</release>
+    </station>
+    
+    <station n="8">
+      <release type="bool">false</release>
+    </station>
+    
+    <station n="9">
+      <release type="bool">false</release>
+    </station>
+    
+    <station n="10">  <!--For ejection-->
+      <release type="bool">false</release>
+    </station>
+
+  </armament>
+    <baydoors>
+    <AIM9X type="double">0</AIM9X>
+    <AIM120 type="double">0</AIM120>
+    </baydoors>
+      <engines>
+        <engine n="0">
+          <throttle type="double">0</throttle>
+          <reheat type="double">0</reheat>
+        </engine>
+        <engine n="1">
+          <throttle type="double">0</throttle>
+          <reheat type="double">0</reheat>
+        </engine>
+      </engines>
+      <gear>
+        <brake-parking type="double">1.0</brake-parking>
+      </gear>
+    </controls>
+
+<!-- Engine indexes & FOD Screen pos -->
+	<engines>
+		<engine n="0">
+			<running>true</running>
+		</engine>
+		<engine n="1">
+			<running>true</running>
+		</engine>
+	</engines>
+
+<!-- Fuel Tank indexes -->
+    <consumables>
+      <fuel>
+        <tank n="0">
+          <tank-num type="int">0</tank-num>
+        </tank>
+        <tank n="1">
+          <tank-num type="int">1</tank-num>
+        </tank>
+        <tank n="2">
+          <tank-num type="int">2</tank-num>
+        </tank>
+        <tank n="3">
+          <tank-num type="int">3</tank-num>
+        </tank>
+      </fuel>
+    </consumables>
+
+<!-- Terrain Following/Avoidance Radar -->
+    <instrumentation>
+              <datalink>
+            <data type="int">0</data>
+            <power type="bool">true</power>
+            <channel type="int">0000</channel>
+            <power_prop type="string">/instrumentation/datalink/power</power_prop>
+            <channel_prop type="string">instrumentation/datalink/channel</channel_prop>
+            <receive_period type="double">1</receive_period>
+        </datalink>
+
+		<radar>
+			<range type="int" archive="y">20</range>
+			<range-factor type="double" archive="n">0.001888</range-factor>
+			<minimized type="bool" archive="y">false</minimized>
+			<selected type="int">3</selected>
+			<enabled type="bool">true</enabled>
+			<az-field type="double">120</az-field>
+			<range type="double">150</range>
+			<range-selected type="double">50</range-selected>
+			<radar2-range type="double">150</radar2-range>
+			<display-rdr type="bool">true</display-rdr>
+			<radar-standby type="int">0</radar-standby>
+			<mode>
+				<rws type="bool">true</rws>
+				<tws-auto type="bool">false</tws-auto>
+			</mode>
+		</radar> 
+
+
+
+  <radar2>
+   <sweep-width-m type="double">0.0844</sweep-width-m>
+   <range-width-m type="double">0.0846</range-width-m>
+   <radius-ppi-display-m type="double">0.0846</radius-ppi-display-m>
+   <hud-eye-dist-m type="double">0.6705</hud-eye-dist-m>
+   <hud-radius-m type="double">0.071</hud-radius-m>
+   <hud>
+    <target type="bool">1</target>
+   </hud>
+   <targets>
+    <aircraft n="0">
+      <display type="bool">1</display>
+      <x-shift type="double"/>
+      <y-shift type="double"/>
+      <rotation type="double"/>
+      <closure-last-time type="double"/>
+    </aircraft>
+    <aircraft n="1">
+      <display type="bool">1</display>
+      <x-shift type="double"/>
+      <y-shift type="double"/>
+      <rotation type="double"/>
+      <closure-last-time type="double"/>
+    </aircraft>
+    <aircraft n="2">
+      <display type="bool">1</display>
+      <x-shift type="double"/>
+      <y-shift type="double"/>
+      <rotation type="double"/>
+      <closure-last-time type="double"/>
+    </aircraft>
+    <aircraft n="3">
+      <display type="bool">1</display>
+      <x-shift type="double"/>
+      <y-shift type="double"/>
+      <rotation type="double"/>
+      <closure-last-time type="double"/>
+    </aircraft>
+    <aircraft n="4">
+      <display type="bool">1</display>
+      <x-shift type="double"/>
+      <y-shift type="double"/>
+      <rotation type="double"/>
+      <closure-last-time type="double"/>
+    </aircraft>
+    <aircraft n="5">
+      <display type="bool">1</display>
+      <x-shift type="double"/>
+      <y-shift type="double"/>
+      <rotation type="double"/>
+      <closure-last-time type="double"/>
+    </aircraft>
+    <aircraft n="6">
+      <display type="bool">1</display>
+      <x-shift type="double"/>
+      <y-shift type="double"/>
+      <rotation type="double"/>
+      <closure-last-time type="double"/>
+    </aircraft>
+    <aircraft n="7">
+      <display type="bool">1</display>
+      <x-shift type="double"/>
+      <y-shift type="double"/>
+      <rotation type="double"/>
+      <closure-last-time type="double"/>
+    </aircraft>
+   </targets>
+  </radar2>
+
+
+      <terrain-radar>
+        <hi-elev>
+          <alt-ft type="double">-9999.9</alt-ft>
+          <lat-deg type="double">-9999.9</lat-deg>
+          <lon-deg type="double">-9999.9</lon-deg>
+          <dist-m type="double">-9999.9</dist-m>
+          <collision-status type="string">initialised</collision-status>
+        </hi-elev>
+        <settings>
+          <mode type="string">extend</mode>
+          <state type="string">off</state>
+          <range-m type="double">2500</range-m>
+          <step-m type="double">250</step-m>
+          <max-climb-rate-fps type="double">120</max-climb-rate-fps>
+          <hi-elev-markers type="bool">false</hi-elev-markers>
+        </settings>
+      </terrain-radar>
+    </instrumentation>
+
+    <nasal>
+				<misc>
+			<file>Aircraft/T-50/Nasal/misc.nas</file>
+		</misc>
+ <CanvasPylonsDlg><file>Aircraft/T-50/Nasal/CanvasDlg/Canvas-pylons-Dlg.nas</file> </CanvasPylonsDlg>
+
+	    <notifications>
+            <file>Aircraft/T-50/Nasal/ArmamentNotification.nas</file>
+            <file>Aircraft/T-50/Nasal/GeoBridgedTransmitter.nas</file>
+        </notifications>
+        <damage>
+            <file>Aircraft/SU-37/Nasal/damage.nas</file>
+        </damage>
+<T-50>
+<file>Aircraft/SU-37/Nasal/Liveries.nas</file>
+</T-50>
+		   <missile>
+      <file>Aircraft/T-50/Nasal/weapons/missile.nas</file>
+      <file>Aircraft/T-50/Nasal/weapons/Loading_Missiles.nas</file>
+      <file>Aircraft/T-50/Nasal/weapons/missile_GroundTargeting.nas</file>
+    </missile>
+
+	    <guns>
+      <file>Aircraft/T-50/Nasal/weapons.nas</file>
+    </guns>
+    <datalink>
+<file>Aircraft/SU-37/Nasal/datalink.nas</file>
+</datalink>
+				<radardist>
+			<file>Aircraft/Instruments-3d/radardist/radardist.nas</file>
+		</radardist>
+		
+		<radar>
+			<file>Aircraft/T-50/Nasal/radar2.nas</file> 
+		</radar>
+
+    <m2000_load>
+      <file>Aircraft/T-50/Nasal/weapons/ext_stores.nas</file>
+    </m2000_load>
+    		<t50>
+			<file>Aircraft/T-50/Nasal/radarinit.nas</file>
+
+			<file>Aircraft/T-50/Nasal/T-50.nas</file>
+
+		</t50>
+
+
+      <SU37KBMAPPING>
+        <file>Aircraft/SU-37/Nasal/SU-37-keyboard-mapping.nas</file>
+      </SU37KBMAPPING>
+
+      <SU37DROPVIEW>
+        <file>Aircraft/SU-37/Nasal/SU-37-drop-view.nas</file>
+        <script>initialise();</script>
+      </SU37DROPVIEW>
+
+      <SU37TRAJMARKER>
+        <file>Aircraft/SU-37/Nasal/SU-37-trajectory-markers.nas</file>
+      </SU37TRAJMARKER>
+
+      <SU37APFCS>
+        <file>Aircraft/SU-37/Nasal/SU-37-AP-FCS-instrument.nas</file>
+      </SU37APFCS>
+
+      <SU37FCSSTICKMODE>
+        <file>Aircraft/SU-37/Nasal/SU-37-FCS-stick-mode.nas</file>
+        <script>initialise();</script>
+      </SU37FCSSTICKMODE>
+
+      <SU37FCSELEVONPITCHINPUT>
+        <file>Aircraft/SU-37/Nasal/SU-37-FCS-elevon-pitch-input.nas</file>
+        <script>initialise();</script>
+      </SU37FCSELEVONPITCHINPUT>
+
+      <SU37FCSELEVONROLLINPUT>
+        <file>Aircraft/SU-37/Nasal/SU-37-FCS-elevon-roll-input.nas</file>
+        <script>initialise();</script>
+      </SU37FCSELEVONROLLINPUT>
+
+      <SU37FCSFLAPERONFLAPS>
+        <file>Aircraft/SU-37/Nasal/SU-37-FCS-flaperon-flaps.nas</file>
+        <script>initialise();</script>
+      </SU37FCSFLAPERONFLAPS>
+
+      <SU37FCSFLAPERONROLL>
+        <file>Aircraft/SU-37/Nasal/SU-37-FCS-flaperon-roll.nas</file>
+        <script>initialise();</script>
+      </SU37FCSFLAPERONROLL>
+
+      <SU37FCSSLATS>
+        <file>Aircraft/SU-37/Nasal/SU-37-FCS-slats.nas</file>
+        <script>initialise();</script>
+      </SU37FCSSLATS>
+
+      <SU37FCSTHROTTLES>
+        <file>Aircraft/SU-37/Nasal/SU-37-FCS-throttles.nas</file>
+        <script>initialise();</script>
+      </SU37FCSTHROTTLES>
+
+      <SU37FCSTHRUSTVECTORING>
+        <file>Aircraft/SU-37/Nasal/SU-37-FCS-thrust-vectoring.nas</file>
+        <script>initialise();</script>
+      </SU37FCSTHRUSTVECTORING>
+
+      <SU37FCSAUTOSPEEDBRAKE>
+        <file>Aircraft/SU-37/Nasal/SU-37-FCS-auto-speedbrake.nas</file>
+        <script>initialise();</script>
+      </SU37FCSAUTOSPEEDBRAKE>
+
+      <SU37APLISTENERS>
+        <file>Aircraft/SU-37/Nasal/SU-37-autopilot-listeners.nas</file>
+        <script>initialise();</script>
+      </SU37APLISTENERS>
+
+      <SU37AUTOTAKEOFF>
+        <file>Aircraft/SU-37/Nasal/SU-37-auto-take-off.nas</file>
+      </SU37AUTOTAKEOFF>
+
+      <SU37AUTOLAND>
+        <file>Aircraft/SU-37/Nasal/SU-37-auto-land.nas</file>
+      </SU37AUTOLAND>
+
+      <SU37FCSCANARDS>
+        <file>Aircraft/SU-37/Nasal/SU-37-FCS-canards.nas</file>
+        <script>initialise();</script>
+      </SU37FCSCANARDS>
+
+      <SU37AEIANIMATION>
+        <file>Aircraft/SU-37/Nasal/SU-37-AEI-animation.nas</file>
+        <script>initialise();</script>
+      </SU37AEIANIMATION>
+
+      <SU37FODSCREENSANIMATION>
+        <file>Aircraft/SU-37/Nasal/SU-37-FOD-screens-animation.nas</file>
+        <script>initialise();</script>
+      </SU37FODSCREENSANIMATION>
+
+      <SU37AM>
+        <file>Aircraft/SU-37/Nasal/SU-37-AM.nas</file>
+      </SU37AM>
+
+      <SU37FCSSPINRECVR>
+        <file>Aircraft/SU-37/Nasal/SU-37-FCS-auto-spin-recovery.nas</file>
+        <script>initialise();</script>
+      </SU37FCSSPINRECVR>
+
+      <SU37TFA>
+        <file>Aircraft/SU-37/Nasal/SU-37-tfa.nas</file>
+      </SU37TFA>
+
+
+
+        <drone>
+      <file>Aircraft/SU-37/Nasal/drone.nas</file>
+    </drone>
+	      <aitrack>
+      <file>Aircraft/SU-37/Nasal/AI.nas</file>
+    </aitrack>
+
+    <situ>
+      <file>Aircraft/SU-37/Nasal/SITU.nas</file>
+    </situ>
+    </nasal>
+
+  </PropertyList>
