@@ -157,8 +157,9 @@ SU-37 simulation config.
 <float n="7" type="double" alias="/engines/engine[1]/nozzle-pos-norm"/>
 <float n="8" type="double" alias="/fdm/jsbsim/fcs/leftcannardstopper"/>
 <float n="9" type="double" alias="/fdm/jsbsim/fcs/rightcannardstopper"/>
+<float n="10" type="double" alias="/fdm/jsbsim/fcs/tv-rudder-vector-rad"/>
 </generic>		
-<visibility-range-nm type="int">2000</visibility-range-nm> <!--Cant just do this, Nasal has to override it-->
+<visibility-range-nm type="int">320</visibility-range-nm> <!--Cant just do this, Nasal has to override it-->
 	</multiplay>
 <!-- AoA Indexer target 7.0 deg -->
       <aoa-indexer>
@@ -171,7 +172,7 @@ SU-37 simulation config.
 <!--sub models -->
       <submodels>
         <serviceable type="bool">1</serviceable>
-        <path>Aircraft/SU-37/SU-37-submodels.xml</path>
+        <path>Aircraft/SU-37/Submodels.xml</path>
       </submodels>
 
 <!-- Help -->
@@ -353,6 +354,15 @@ SU-37 simulation config.
 				</menu>
 			</default>
 		</menubar>
+		<rendering>
+			<redout>
+				<parameters>
+					<blackout-complete-g>15</blackout-complete-g>
+					<blackout-onset-g>15</blackout-onset-g>
+				</parameters>
+			</redout>
+		</rendering>
+
 	      <weight n="0">
             <name>pylon1</name>
             <weight-lb type="double"> 0 </weight-lb>
@@ -759,6 +769,17 @@ SU-37 simulation config.
 <!-- Keyboard mapping -->
     <input>
       <keyboard>
+
+<key n="119">
+  <name>w</name>
+  <desc>Cycle Gun/Missile</desc>
+  <binding>
+ <command>property-cycle</command>
+ <property>controls/armament/stick-selector</property> <!--Working!! :D-->
+ <value>1</value>
+ <value>2</value>
+</binding>
+ </key>       
 <!-- AM -->
         <key n="11">
           <name>CTRL-k</name>
@@ -890,7 +911,7 @@ SU-37 simulation config.
   <mod-up>
     <binding>
       <command>nasal</command>
-      <script>guns.stopFiring();</script>
+      <script>guns.stopFiring();setprop("controls/armament/trigger",0);</script>
     </binding>
   </mod-up>
  </key>
@@ -1403,7 +1424,7 @@ SU-37 simulation config.
 
     <nasal>
 				<misc>
-			<file>Aircraft/T-50/Nasal/misc.nas</file>
+			<file>Aircraft/SU-37/Nasal/misc.nas</file>
 		</misc>
  <CanvasPylonsDlg><file>Aircraft/T-50/Nasal/CanvasDlg/Canvas-pylons-Dlg.nas</file> </CanvasPylonsDlg>
 
@@ -1424,7 +1445,7 @@ SU-37 simulation config.
     </missile>
 
 	    <guns>
-      <file>Aircraft/T-50/Nasal/weapons.nas</file>
+      <file>Aircraft/SU-37/Nasal/weapons.nas</file>
     </guns>
     <datalink>
 <file>Aircraft/SU-37/Nasal/datalink.nas</file>

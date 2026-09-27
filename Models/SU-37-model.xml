@@ -2578,6 +2578,47 @@
     </axis>
   </animation>
 
+  <animation>
+    <type>rotate</type>
+    <object-name>ENG_Left_Nozzle_PO00</object-name>
+    <object-name>ENG_Left_Nozzle_PO01</object-name>
+    <object-name>ENG_Left_Nozzle_PO02</object-name>
+    <object-name>ENG_Left_Nozzle_PO03</object-name>
+    <object-name>ENG_Left_Nozzle_PO04</object-name>
+    <object-name>ENG_Left_Nozzle_PO05</object-name>
+    <object-name>ENG_Left_Nozzle_PO06</object-name>
+    <object-name>ENG_Left_Nozzle_PO07</object-name>
+    <object-name>ENG_Left_Nozzle_PO08</object-name>
+    <object-name>ENG_Left_Nozzle_PO09</object-name>
+    <object-name>ENG_Left_Nozzle_PO10</object-name>
+    <object-name>ENG_Left_Nozzle_PO11</object-name>
+    <object-name>ENG_Left_Nozzle_PO12</object-name>
+    <object-name>ENG_Left_Nozzle_PO13</object-name>
+    <object-name>ENG_Left_Nozzle_PO14</object-name>
+    <object-name>ENG_Left_Nozzle_PO15</object-name>
+    <object-name>ENG_Left_Nozzle_PI00</object-name>
+    <object-name>ENG_Left_Nozzle_PI01</object-name>
+    <object-name>ENG_Left_Nozzle_PI02</object-name>
+    <object-name>ENG_Left_Nozzle_PI03</object-name>
+    <object-name>ENG_Left_Nozzle_PI04</object-name>
+    <object-name>ENG_Left_Nozzle_PI05</object-name>
+    <object-name>ENG_Left_Nozzle_PI06</object-name>
+    <object-name>ENG_Left_Nozzle_PI07</object-name>
+    <object-name>ENG_Left_Nozzle_PI08</object-name>
+    <object-name>ENG_Left_Nozzle_PI09</object-name>
+    <object-name>ENG_Left_Nozzle_PI10</object-name>
+    <object-name>ENG_Left_Nozzle_PI11</object-name>
+    <object-name>ENG_Left_Nozzle_PI12</object-name>
+    <object-name>ENG_Left_Nozzle_PI13</object-name>
+    <object-name>ENG_Left_Nozzle_PI14</object-name>
+    <object-name>ENG_Left_Nozzle_PI15</object-name>
+    <property>sim/multiplay/generic/float[10]</property>
+    <factor>-9</factor>
+    <axis>
+<object-name>left-axis</object-name>
+    </axis>
+  </animation>
+
 <!-- Position the petals around the nozzle -->
   <animation>
     <type>rotate</type>
@@ -3182,7 +3223,16 @@
       <z>0.0</z>
     </axis>
   </animation>
-
+  <animation>
+    <type>rotate</type>
+    <object-name>ENG_Left_Nozzle_Base_Outer</object-name>
+    <object-name>ENG_Left_Nozzle_Base_Inner</object-name>
+    <property>sim/multiplay/generic/float[10]</property>
+    <factor>-9</factor>
+    <axis>
+<object-name>left-axis</object-name>
+    </axis>
+  </animation>
 <!-- Reheat -->
   <animation>
     <type>noshadow</type>
@@ -3214,7 +3264,7 @@
   <animation>
     <type>scale</type>
     <object-name>L_Reheat</object-name>
-    <property>sim/multiplay/generic/float[4]</property>
+    <property>sim/multiplay/generic/float[6]</property>
     <x-factor>1</x-factor>
     <x-offset>0</x-offset>
     <x-max>1</x-max>
@@ -3299,6 +3349,48 @@
       <x>0.0</x>
       <y>1.0</y>
       <z>0.0</z>
+    </axis>
+  </animation>
+
+
+  <animation>
+    <type>rotate</type>
+    <object-name>ENG_Right_Nozzle_PO00</object-name>
+    <object-name>ENG_Right_Nozzle_PO01</object-name>
+    <object-name>ENG_Right_Nozzle_PO02</object-name>
+    <object-name>ENG_Right_Nozzle_PO03</object-name>
+    <object-name>ENG_Right_Nozzle_PO04</object-name>
+    <object-name>ENG_Right_Nozzle_PO05</object-name>
+    <object-name>ENG_Right_Nozzle_PO06</object-name>
+    <object-name>ENG_Right_Nozzle_PO07</object-name>
+    <object-name>ENG_Right_Nozzle_PO08</object-name>
+    <object-name>ENG_Right_Nozzle_PO09</object-name>
+    <object-name>ENG_Right_Nozzle_PO10</object-name>
+    <object-name>ENG_Right_Nozzle_PO11</object-name>
+    <object-name>ENG_Right_Nozzle_PO12</object-name>
+    <object-name>ENG_Right_Nozzle_PO13</object-name>
+    <object-name>ENG_Right_Nozzle_PO14</object-name>
+    <object-name>ENG_Right_Nozzle_PO15</object-name>
+    <object-name>ENG_Right_Nozzle_PI00</object-name>
+    <object-name>ENG_Right_Nozzle_PI01</object-name>
+    <object-name>ENG_Right_Nozzle_PI02</object-name>
+    <object-name>ENG_Right_Nozzle_PI03</object-name>
+    <object-name>ENG_Right_Nozzle_PI04</object-name>
+    <object-name>ENG_Right_Nozzle_PI05</object-name>
+    <object-name>ENG_Right_Nozzle_PI06</object-name>
+    <object-name>ENG_Right_Nozzle_PI07</object-name>
+    <object-name>ENG_Right_Nozzle_PI08</object-name>
+    <object-name>ENG_Right_Nozzle_PI09</object-name>
+    <object-name>ENG_Right_Nozzle_PI10</object-name>
+    <object-name>ENG_Right_Nozzle_PI11</object-name>
+    <object-name>ENG_Right_Nozzle_PI12</object-name>
+    <object-name>ENG_Right_Nozzle_PI13</object-name>
+    <object-name>ENG_Right_Nozzle_PI14</object-name>
+    <object-name>ENG_Right_Nozzle_PI15</object-name>
+    <property>sim/multiplay/generic/float[10]</property>
+    <factor>-9</factor>
+    <axis>
+      <object-name>right-axis</object-name>
     </axis>
   </animation>
 
@@ -3906,7 +3998,22 @@
       <z>0.0</z>
     </axis>
   </animation>
-
+  <!--RightRud-->
+  <animation>
+    <type>rotate</type>
+    <object-name>ENG_Right_Nozzle_Base_Outer</object-name>
+    <object-name>ENG_Right_Nozzle_Base_Inner</object-name>
+    <property>sim/multiplay/generic/float[10]</property>
+    <factor>-9</factor>
+    <center>
+      <x-m>18.43</x-m>
+      <y-m>1.15</y-m>
+      <z-m>-0.2</z-m>
+    </center>
+    <axis>
+      <object-name>right-axis</object-name>
+    </axis>
+  </animation>
 <!-- Reheat -->
   <animation>
     <type>noshadow</type>
@@ -3938,7 +4045,7 @@
   <animation>
     <type>scale</type>
     <object-name>R_Reheat</object-name>
-    <property>sim/multiplay/generic/float[5]</property>
+    <property>sim/multiplay/generic/float[7]</property>
     <x-factor>1</x-factor>
     <x-offset>0</x-offset>
     <x-max>1</x-max>
@@ -3973,6 +4080,41 @@
       <x>0.0</x>
       <y>1.0</y>
       <z>0.0</z>
+    </axis>
+  </animation>
+  <!--RightRudd-->
+  <animation>
+    <type>rotate</type>
+    <object-name>R_Reheat</object-name>
+    <property>sim/multiplay/generic/float[10]</property>
+    <factor>9</factor>
+    <center>
+      <x-m>0.0</x-m>
+      <y-m>0.0</y-m>
+      <z-m>-0.2</z-m>
+    </center>
+    <axis>
+      <x>0.0</x>
+      <y>0.0</y>
+      <z>1.0</z>
+    </axis>
+  </animation>
+
+
+  <animation>
+    <type>rotate</type>
+    <object-name>L_Reheat</object-name>
+    <property>sim/multiplay/generic/float[10]</property>
+    <factor>9</factor>
+    <center>
+      <x-m>0.0</x-m>
+      <y-m>0.0</y-m>
+      <z-m>-0.2</z-m>
+    </center>
+    <axis>
+      <x>0.0</x>
+      <y>0.0</y>
+      <z>1.0</z>
     </axis>
   </animation>
 
